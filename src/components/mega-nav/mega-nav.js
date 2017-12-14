@@ -24,7 +24,15 @@ class MegaNav extends Component {
   render() {
     return (
       <header className="mega-nav">
-        <h1> Datatables with React </h1>
+        <div className="row">
+          <div className="col-lg-4 test-box">
+            <div className="box">Responsive</div>
+          </div>
+
+          <div className="col-lg-8 test-box">
+            <div className="box">Responsive2</div>
+          </div>
+        </div>
       </header>
     );
   }

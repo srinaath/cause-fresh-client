@@ -1,5 +1,8 @@
+@import '../../util/scss/shared.scss';
+
 .mega-nav {
-  h1 {
-    font-size: 51px;
+  .test-box {
+    height: 45px;
+    background: blue;
   }
 }
