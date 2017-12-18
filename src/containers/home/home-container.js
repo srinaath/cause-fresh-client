@@ -8,7 +8,10 @@ class HomeContainer extends Component {
   render() {
     return (
       <div>
-        <small>You are running this application in <b>{process.env.REACT_APP_SECRET_CODE}</b> mode.</small>
+        <small>
+          You are running this application in{' '}
+          <b>{process.env.REACT_APP_SECRET_CODE}</b> mode.
+        </small>
       </div>
     );
   }

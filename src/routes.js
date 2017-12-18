@@ -8,11 +8,11 @@ export default [
     component: HomeContainer
   },
   {
-    path:'/error/404',
+    path: '/error/404',
     component: Error404Container
   },
   {
-    path:'/error/:code?',
+    path: '/error/:code?',
     component: Error500Container
   },
   {

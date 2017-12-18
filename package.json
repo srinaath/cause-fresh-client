@@ -22,6 +22,7 @@
     ]
   },
   "scripts": {
+    "analyze": "source-map-explorer build/static/js/main.*",
     "prettify-js": "./node_modules/.bin/prettier --single-quote --write 'src/**/*.{js,jsx}'",
     "build-css": "node-sass-chokidar src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
