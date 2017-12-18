@@ -17,9 +17,7 @@ class App extends Component {
         <BrowserRouter>
         <div className="main-content">
           <Switch>
-            <Route path="/home" component={HomeContainer} />
-            <Route path="/error/500" component={Error500Container} />
-            <Route path="/" component={HomeContainer} />
+            {Routes.map(route => <Route {...route} />)}
           </Switch>
         </div>
         </BrowserRouter>

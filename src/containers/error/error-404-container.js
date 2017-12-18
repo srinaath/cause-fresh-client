@@ -7,11 +7,11 @@ import './error-container.css';
 class Error404Container extends Component {
   render() {
     return (
-      <Error404Container>
+      <div>
           <p>
-            This is a 500 container
+            This is a 404 container
           </p>
-      </Error404Container>
+      </div>
     );
   }
 }

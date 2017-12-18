@@ -2,12 +2,9 @@ import Error404Container from './containers/error/error-404-container';
 import Error500Container from './containers/error/error-500-container';
 import HomeContainer from './containers/home/home-container';
 
-
-
 export default [
   {
-    path: '/',
-    exact: true,
+    path: '/home',
     component: HomeContainer
   },
   {
@@ -19,6 +16,7 @@ export default [
     component: Error500Container
   },
   {
-    component: Error404Container
+    path: '/',
+    component: HomeContainer
   }
 ];
