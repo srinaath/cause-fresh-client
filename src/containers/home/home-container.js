@@ -7,12 +7,8 @@ import './home-container.css';
 class HomeContainer extends Component {
   render() {
     return (
-      <div className="row">
-        <div className="col-lg-12">
-          <p>
-            This is the home container
-          </p>
-        </div>
+      <div>
+        <small>You are running this application in <b>{process.env.REACT_APP_SECRET_CODE}</b> mode.</small>
       </div>
     );
   }
