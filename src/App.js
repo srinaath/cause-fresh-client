@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
+
 import Routes from './routes';
 
 import MegaNav from './components/mega-nav/mega-nav';
@@ -10,15 +11,13 @@ class App extends Component {
     return (
       <div className="App">
         <MegaNav />
-        <BrowserRouter>
-          <div className="main-content">
-            <Switch>
-              {Routes.map((route, index) => (
-                <Route key={'route' + index} {...route} />
-              ))}
-            </Switch>
-          </div>
-        </BrowserRouter>
+        <div className="main-content">
+          <Switch>
+            {Routes.map((route, index) => (
+              <Route key={'route' + index} {...route} />
+            ))}
+          </Switch>
+        </div>
       </div>
     );
   }

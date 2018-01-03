@@ -5,13 +5,22 @@ import React, { Component } from 'react';
 import './home-container.css';
 
 class HomeContainer extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      course: {title: null}
+    };
+  }
+
+
   render() {
     return (
       <div>
-        <small>
-          You are running this application in{' '}
-          <b>{process.env.REACT_APP_SECRET_CODE}</b> mode.
-        </small>
+        <h1>
+          Courses
+        </h1>
       </div>
     );
   }
