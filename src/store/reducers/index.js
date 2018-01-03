@@ -1,12 +1,11 @@
 import { combineReducers } from 'redux';
-import navItems from  './mega-nav-reducer';
+import { routerReducer } from 'react-router-redux';
 
+import courseItems from  './course-reducer';
 
-
-
-// COMBINE REDUCERS
 const rootReducer = combineReducers({
-  navItems
+  courseItems,
+  routing: routerReducer
 });
 
 export default rootReducer;

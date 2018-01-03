@@ -13,7 +13,7 @@ import configureStore from './store/configure-store';
 
 const store = configureStore();
 ReactDOM.render(
-<Provider>
+<Provider store={store}>
   <BrowserRouter>
     <App />
   </BrowserRouter>
