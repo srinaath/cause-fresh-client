@@ -21,16 +21,20 @@ import React, { Component } from 'react';
 import './mega-nav.css';
 
 class MegaNav extends Component {
+
   render() {
     return (
       <header className="mega-nav">
         <div className="row">
           <div className="col-lg-4 test-box">
-            <div className="box">Responsive</div>
           </div>
 
           <div className="col-lg-8 test-box">
-            <div className="box">Responsive2</div>
+            <div className="box">
+              <ul>
+
+              </ul>
+            </div>
           </div>
         </div>
       </header>
