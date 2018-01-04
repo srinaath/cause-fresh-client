@@ -1,5 +1,3 @@
-import * as apiActions from '../../util/api/api';
-
 const LOAD_COURSE_ITEMS = 'LOAD_COURSE_ITEMS';
 
 
