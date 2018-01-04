@@ -1,26 +1,37 @@
+import * as apiActions from '../../util/api/api';
+
 const LOAD_COURSE_ITEMS = 'LOAD_COURSE_ITEMS';
+
 
 
 export function loadCourseItems() {
   return function (dispatch) {
-    let data = [
+    return fetch(`https://dog.ceo/api/breeds/list/all`)
+    .then(res => res.json())
+    .then(data =>
       {
-        id: 1,
-        name: 'BlockChain Development'
-      },
-      {
-        id: 2,
-        name: 'GraphQL Development'
-      },
-      {
-        id: 3,
-        name: 'Big Data Usage'
-      }
-    ];
+        let dataVal = [
+          {
+            id: 1,
+            name: 'BlockChain Development'
+          },
+          {
+            id: 2,
+            name: 'GraphQL Development'
+          },
+          {
+            id: 3,
+            name: 'Big Data Usage'
+          }
+        ];
 
-    return dispatch({
-      type: LOAD_COURSE_ITEMS,
-      data
-    });
+        dispatch(
+          {
+            type: LOAD_COURSE_ITEMS,
+            dataVal
+          })
+      },
+      err => dispatch({ type: 'LOAD_DATA_FAILURE', err })
+    );
   };
 }
