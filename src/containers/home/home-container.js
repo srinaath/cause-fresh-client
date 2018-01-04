@@ -16,6 +16,7 @@ class HomeContainer extends Component {
     super(props);
 
     this.loadCourses = this.loadCourses.bind(this);
+    this.courseLoaded = false;
 
     this.state = {
       courses: []
@@ -25,13 +26,18 @@ class HomeContainer extends Component {
   componentWillReceiveProps(nextProps) {
     if(nextProps.coursesList !== this.props.coursesList) {
       this.setState({
-        courses: nextProps.coursesList
+        courses: [this.state.courses, ...nextProps.coursesList]
       });
     }
   }
 
   loadCourses() {
-    this.props.actions.loadCourseItems();
+    if(this.courseLoaded === false) {
+      this.courseLoaded = true;
+      this.props.actions.loadCourseItems();
+    }
+    else
+      this.props.actions.loadAddnCourseItems();
   }
 
 

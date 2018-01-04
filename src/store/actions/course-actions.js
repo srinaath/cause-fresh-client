@@ -1,4 +1,5 @@
 const LOAD_COURSE_ITEMS = 'LOAD_COURSE_ITEMS';
+const LOAD_ADDN_COURSE_ITEMS = 'LOAD_ADDN_COURSE_ITEMS';
 
 
 
@@ -19,7 +20,7 @@ export function loadCourseItems() {
           },
           {
             id: 3,
-            name: 'Big Data Usage'
+            name: 'Hadoop and Map Reduce'
           }
         ];
 
@@ -33,3 +34,25 @@ export function loadCourseItems() {
     );
   };
 }
+
+
+export function loadAddnCourseItems() {
+  return function (dispatch) {
+    let addnDataVal = [
+      {
+        id: 4,
+        name: 'Bio informatics'
+      },
+      {
+        id: 5,
+        name: 'React Js Development'
+      }
+    ];
+    return dispatch(
+        {
+          type: LOAD_ADDN_COURSE_ITEMS,
+          addnDataVal
+        });
+    }
+  };
+
