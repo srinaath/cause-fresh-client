@@ -9,7 +9,6 @@ import LeftNav from '../../components/left-nav/left-nav';
 //REDUX
 import * as actions from '../../store/actions/course-actions';
 
-
 // STYLES
 import './donation-container.css';
 
