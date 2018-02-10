@@ -2026,6 +2026,17 @@
   padding: 0; }
   .mega-nav .test-box {
     padding-left: 30px; }
+    .mega-nav .test-box .donate {
+      background-color: #4CAF50;
+      border-radius: 4px;
+      color: white;
+      border: none;
+      padding: 8px;
+      font-size: 16px; }
+      @media (max-width: 553px) {
+        .mega-nav .test-box .donate {
+          padding: 4px;
+          font-size: 12px; } }
     .mega-nav .test-box p, .mega-nav .test-box h2 {
       color: white;
       font-family: 'Lato', sans-serif; }
@@ -2036,7 +2047,8 @@
       margin-right: 60px; }
       @media (max-width: 553px) {
         .mega-nav .test-box p {
-          margin-top: 0; } }
+          margin-top: 0;
+          font-size: 13px; } }
     .mega-nav .test-box h2 {
       color: white;
       font-size: 2.2rem;

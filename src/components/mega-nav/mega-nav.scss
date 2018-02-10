@@ -8,6 +8,20 @@
   .test-box {
     padding-left: 30px;
 
+    .donate {
+      background-color: #4CAF50;
+      border-radius: 4px; 
+      color: white;
+      border: none;
+      padding: 8px;
+      font-size: 16px;
+
+      @media (max-width: 553px) {
+        padding: 4px;
+        font-size: 12px;
+      }
+    }
+
     p, h2 {
       color: white;
       font-family: 'Lato', sans-serif;
@@ -21,6 +35,7 @@
 
       @media (max-width: 553px) {
         margin-top: 0;
+        font-size: 13px;
       }
     }
 
