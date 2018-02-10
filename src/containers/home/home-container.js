@@ -15,29 +15,25 @@ class HomeContainer extends Component {
   constructor(props) {
     super(props);
 
-    this.loadCourses = this.loadCourses.bind(this);
-    this.courseLoaded = false;
+    this.loadTransactions = this.loadTransactions.bind(this);
 
     this.state = {
-      courses: []
+      transactions: [],
+      userData: {}
     };
   }
 
   componentWillReceiveProps(nextProps) {
-    if(nextProps.coursesList !== this.props.coursesList) {
+    if(this.props.transactionData !== nextProps.transactionData) {
       this.setState({
-        courses: [this.state.courses, ...nextProps.coursesList]
+        transactions: nextProps.transactionData.transactHistory,
+        userData: nextProps.transactionData.userDetails
       });
     }
   }
 
-  loadCourses() {
-    if(this.courseLoaded === false) {
-      this.courseLoaded = true;
-      this.props.actions.loadCourseItems();
-    }
-    else
-      this.props.actions.loadAddnCourseItems();
+  loadTransactions() {
+    this.props.actions.loadCourseItems(1);
   }
 
 
@@ -69,15 +65,15 @@ class HomeContainer extends Component {
           <div className="col-xs-9 mainContentWrapper">
             <h1>
               <i className="fa fa-spinner" />&nbsp; Latest Activity
-              <button onClick={this.loadCourses}>
+              <button onClick={this.loadTransactions}>
                 Load Data
               </button>
             </h1>
             <ul>
-            {this.state.courses.map((item, index) =>
-              <li key={'courses-' + item.id}>
+            {this.state.transactions.map((item, index) =>
+              <li key={'transact-' + item.id}>
                 <span>
-                  {item.name}
+                  {item.causeDetailName}
                 </span>
               </li>)}
             </ul>
@@ -90,7 +86,7 @@ class HomeContainer extends Component {
 
 function mapStateToProps(state) {
   return {
-    coursesList: state.courseItems
+    transactionData: state.courseItems
   };
 }
 
