@@ -41,20 +41,28 @@ class LeftNav extends Component {
       <div className="col-xs-3 leftNavContainer">
         <ul className="leftNav">
           <li>
-            <i className="fa fa-spinner" />
-            <Link to={'/'} className="menuLink">&nbsp; Latest Activity</Link>
+            <Link to={'/'} className="menuLink">
+              <i className="fa fa-spinner" />&nbsp; 
+              <span className="linkText">Latest Activity</span>
+            </Link>
           </li>
           <li>
-            <i className="fa fa-globe" />
-            <Link to={'/'} className="menuLink">&nbsp; Causes</Link>
+            <Link to={'/'} className="menuLink">
+              <i className="fa fa-globe" />&nbsp; 
+              <span className="linkText">Causes</span>
+            </Link>
           </li>
           <li>
-            <i className="fa fa-dollar" />
-            <Link to={'/'} className="menuLink">&nbsp; Donations</Link>
+            <Link to={'/'} className="menuLink">
+              <i className="fa fa-dollar" />&nbsp; 
+              <span className="linkText">Donations</span>
+            </Link>
           </li>
           <li>
-            <i className="fa fa-user-circle" />
-            <Link to={'/'} className="menuLink">&nbsp; My Account</Link>
+            <Link to={'/'} className="menuLink">
+              <i className="fa fa-user-circle" />&nbsp; 
+              <span className="linkText">My Account</span>
+            </Link>
           </li>
         </ul>
       </div>

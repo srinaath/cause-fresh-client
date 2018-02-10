@@ -54,7 +54,8 @@ class HomeContainer extends Component {
             {this.state.transactions.map((item, index) =>
               <li>
                 <span className="transactionDesc">
-                  You donated {item.transactionValue}MC to {item.causeOrg} for {item.causeName} for {item.causeDetailName}.
+                  {console.log(item)}
+                  You donated <i className="bold">{item.transactionValue}</i> MC to <i className="bold">{item.causeOrg}</i> for <i className="bold">{item.causeName}</i> for <i className="bold">{item.causeDetailName}</i>.
                 </span>
               </li>)}
             </ul>

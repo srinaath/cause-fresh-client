@@ -11,15 +11,6 @@
       margin: 24px 0;
       text-align: left;
 
-      i {
-        
-        @media (max-width: 768px) {
-          font-size: 2em;
-          text-align: center;
-          width:70%;
-        }
-      }
-  
       a.menuLink {
         color: #444;
         font-family: 'Lato', sans-serif;
@@ -32,8 +23,18 @@
           font-weight: 600;
         }
 
-        @media (max-width: 768px) {
-          display: none;
+        i {
+          @media (max-width: 768px) {
+            font-size: 2em;
+            text-align: center;
+            width:70%;
+          }
+        }
+
+        span.linkText {
+          @media (max-width: 768px) {
+            display: none;
+          }
         }
       }
     }
