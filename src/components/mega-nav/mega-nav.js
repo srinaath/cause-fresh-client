@@ -26,10 +26,13 @@ class MegaNav extends Component {
     return (
       <header className="mega-nav">
         <div className="row">
-          <div className="col-lg-4 test-box">
+          <div className="test-box">
+            <p>CAUSE
+              <span>fresh</span>
+            </p>
           </div>
 
-          <div className="col-lg-8 test-box">
+          <div className="test-box">
             <div className="box">
               <ul>
 

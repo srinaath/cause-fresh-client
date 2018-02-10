@@ -43,21 +43,46 @@ class HomeContainer extends Component {
 
   render() {
     return (
-      <div>
-        <h1>
-          Courses
-          <button onClick={this.loadCourses}>
-              Load Data
-          </button>
-        </h1>
-        <ul>
-        {this.state.courses.map((item, index) =>
-          <li key={'courses-' + item.id}>
-            <span>
-              {item.name}
-            </span>
-        </li>)}
-        </ul>
+      <div id="HomeContainer">
+        <div className="row">
+          <div className="col-xs-3 menuWrapper">
+            <ul className="leftNav">
+              <li>
+                <i class="fa fa-spinner" />
+                <a>&nbsp; Latest Activity</a>
+              </li>
+              <li>
+                <i class="fa fa-globe" />
+                <a>&nbsp; Causes</a>
+              </li>
+              <li>
+                <i class="fa fa-dollar" />
+                <a>&nbsp; Donations</a>
+              </li>
+              <li>
+                <i class="fa fa-user-circle" />
+                <a>&nbsp; My Account</a>
+              </li>
+            </ul>
+          </div>
+
+          <div className="col-xs-9 mainContentWrapper">
+            <h1>
+              Courses
+              <button onClick={this.loadCourses}>
+                Load Data
+              </button>
+            </h1>
+            <ul>
+            {this.state.courses.map((item, index) =>
+              <li key={'courses-' + item.id}>
+                <span>
+                  {item.name}
+                </span>
+              </li>)}
+            </ul>
+          </div>
+        </div>
       </div>
     );
   }

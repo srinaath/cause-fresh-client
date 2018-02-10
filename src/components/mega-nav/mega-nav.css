@@ -2020,6 +2020,18 @@
   .last-lg {
     order: 1; } }
 
-.mega-nav .test-box {
-  height: 45px;
-  background: blue; }
+.mega-nav {
+  background: #235f99;
+  margin: 0;
+  padding: 0; }
+  .mega-nav .test-box {
+    padding-left: 30px; }
+    .mega-nav .test-box p {
+      color: white;
+      font-family: 'Lato', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 600;
+      margin: 24px 0;
+      padding: 0; }
+      .mega-nav .test-box p span {
+        font-family: 'Dancing Script', cursive; }
