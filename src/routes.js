@@ -17,11 +17,11 @@ export default [
     component: Error500Container
   },
   {
-    path: '/',
-    component: HomeContainer
-  },
-  {
     path: '/donation',
     component: DonationContainer
+  },
+  {
+    path: '/',
+    component: HomeContainer
   }
 ];
