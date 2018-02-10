@@ -68,7 +68,7 @@ class HomeContainer extends Component {
 
           <div className="col-xs-9 mainContentWrapper">
             <h1>
-              Courses
+              <i class="fa fa-spinner" />&nbsp; Latest Activity
               <button onClick={this.loadCourses}>
                 Load Data
               </button>
