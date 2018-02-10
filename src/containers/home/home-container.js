@@ -48,20 +48,20 @@ class HomeContainer extends Component {
           <div className="col-xs-3 menuWrapper">
             <ul className="leftNav">
               <li>
-                <i class="fa fa-spinner" />
-                <a>&nbsp; Latest Activity</a>
+                <i className="fa fa-spinner" />
+                <a className="menuLink">&nbsp; Latest Activity</a>
               </li>
               <li>
-                <i class="fa fa-globe" />
-                <a>&nbsp; Causes</a>
+                <i className="fa fa-globe" />
+                <a className="menuLink">&nbsp; Causes</a>
               </li>
               <li>
-                <i class="fa fa-dollar" />
-                <a>&nbsp; Donations</a>
+                <i className="fa fa-dollar" />
+                <a className="menuLink">&nbsp; Donations</a>
               </li>
               <li>
-                <i class="fa fa-user-circle" />
-                <a>&nbsp; My Account</a>
+                <i className="fa fa-user-circle" />
+                <a className="menuLink">&nbsp; My Account</a>
               </li>
             </ul>
           </div>

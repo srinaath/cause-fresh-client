@@ -26,18 +26,16 @@ class MegaNav extends Component {
     return (
       <header className="mega-nav">
         <div className="row">
-          <div className="test-box">
-            <p>CAUSE
+          <div className="col-lg-4 test-box">
+            <h2>CAUSE
               <span>fresh</span>
-            </p>
+            </h2>
           </div>
 
-          <div className="test-box">
-            <div className="box">
-              <ul>
-
-              </ul>
-            </div>
+          <div className="col-lg-4 test-box" />
+            
+          <div className="col-lg-4 test-box">
+            <p>Hello, Daniel | Balance: 5000 MC</p>
           </div>
         </div>
       </header>
