@@ -47,19 +47,19 @@ class LeftNav extends Component {
             </Link>
           </li>
           <li>
-            <Link to={'/'} className="menuLink">
+            <Link to={'/causes'} className="menuLink">
               <i className="fa fa-globe" />&nbsp; 
               <span className="linkText">Causes</span>
             </Link>
           </li>
           <li>
-            <Link to={'/'} className="menuLink">
+            <Link to={'/donations'} className="menuLink">
               <i className="fa fa-dollar" />&nbsp; 
               <span className="linkText">Donations</span>
             </Link>
           </li>
           <li>
-            <Link to={'/'} className="menuLink">
+            <Link to={'/account'} className="menuLink">
               <i className="fa fa-user-circle" />&nbsp; 
               <span className="linkText">My Account</span>
             </Link>
