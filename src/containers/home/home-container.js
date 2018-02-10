@@ -32,6 +32,10 @@ class HomeContainer extends Component {
     }
   }
 
+  componentDidMount() {
+    this.props.actions.loadCourseItems(1);
+  }
+
   loadTransactions() {
     this.props.actions.loadCourseItems(1);
   }
