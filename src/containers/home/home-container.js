@@ -49,17 +49,12 @@ class HomeContainer extends Component {
         <div className="row">
           <LeftNav />
           <div className="col-xs-9 mainContentWrapper">
-            <h1>
-              <i className="fa fa-spinner" />&nbsp; Latest Activity
-              <button onClick={this.loadTransactions}>
-                Load Data
-              </button>
-            </h1>
+            <h1><i className="fa fa-spinner" />&nbsp; Latest Activity</h1>
             <ul>
             {this.state.transactions.map((item, index) =>
               <li>
-                <span>
-                  {item.causeDetailName}
+                <span className="transactionDesc">
+                  You donated {item.transactionValue}MC to {item.causeOrg} for {item.causeName} for {item.causeDetailName}.
                 </span>
               </li>)}
             </ul>
