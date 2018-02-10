@@ -28,6 +28,17 @@
 
   .mainContentWrapper {
     height: 800px;
+
+    ul {
+      li {
+        border: 1px solid #ccc;
+        list-style: none;
+        margin-bottom: 10px;
+        padding: 10px;
+        text-align: left;
+        width: 95%;
+      }
+    }
   }
 
   p {
