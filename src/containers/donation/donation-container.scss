@@ -1,0 +1,85 @@
+#DonationContainer {
+    .menuWrapper {
+      border-right: 1px solid #ccc;
+  
+      ul.leftNav {
+        padding-left: 24px;
+  
+        li {
+          list-style: none;
+          margin: 24px 0;
+          text-align: left;
+  
+          i {
+            @media (max-width: 768px) {
+              font-size: 2em;
+              text-align: center;
+              width:70%;
+            }
+          }
+    
+          a.menuLink {
+            color: #444;
+            font-family: 'Lato', sans-serif;
+            font-size: 1.2rem;
+            cursor: pointer;
+            text-decoration: none;
+    
+            &:hover {
+              color: #111;
+              font-weight: 600;
+            }
+  
+            @media (max-width: 768px) {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  
+    .mainContentWrapper {
+      height: 800px;
+  
+      h1 {
+        font-family: 'Lato', sans-serif;
+        font-weight: 100;
+        letter-spacing: -1px;
+        font-size: 1.8em;
+        text-align: left;
+        margin-left: 20px;
+  
+        @media (max-width: 768px) {
+          font-size: 1.4em;
+          margin-left: 12px;
+        }
+      }
+  
+      ul {
+        padding-left: 0;
+        margin-left: 20px;
+  
+        @media (max-width: 768px) {
+          margin-left: 12px;
+        }
+  
+        li {
+          border: 1px solid #ccc;
+          list-style: none;
+          margin-bottom: 10px;
+          padding: 10px;
+          text-align: left;
+          width: 96%;
+  
+          @media (max-width: 768px) {
+            width: 88%;
+          }
+        }
+      }
+    }
+  
+    p {
+      font-size: 60px;
+    }
+  }
+  
