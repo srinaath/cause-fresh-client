@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.17.1",
     "esdoc": "^1.0.4",
     "esdoc-standard-plugin": "^1.0.0",
     "flexboxgrid-sass": "^8.0.5",

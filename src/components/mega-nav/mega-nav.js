@@ -17,10 +17,36 @@
 // STYLES
 
 // THIRD-PARTY
-import React, { Component } from 'react';
 import './mega-nav.css';
 
+// THIRD-PARTY
+import React, { Component }   from 'react';
+import { connect }            from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+//REDUX
+import * as actions from '../../store/actions/course-actions';
+
 class MegaNav extends Component {
+  constructor() {
+    super();
+    this.state = {
+      userData: {},
+      loginTxt: ''
+    };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if(this.props.transactionData !== nextProps.transactionData) {
+      this.setState({
+        userData: nextProps.transactionData.userDetails
+      });
+      let logText = `Hello ${nextProps.transactionData.userDetails.userName} | Balance: ${nextProps.transactionData.userDetails.balance} MC`;
+      this.setState({
+        loginTxt: logText
+      });
+    }
+  }
 
   render() {
     return (
@@ -33,9 +59,9 @@ class MegaNav extends Component {
           </div>
 
           <div className="col-lg-4 test-box" />
-            
+
           <div className="col-lg-4 test-box">
-            <p>Hello, Daniel | Balance: 5000 MC</p>
+            <p>{this.state.loginTxt}</p>
           </div>
         </div>
       </header>
@@ -43,4 +69,20 @@ class MegaNav extends Component {
   }
 }
 
-export default MegaNav;
+function mapStateToProps(state) {
+  return {
+    transactionData: state.courseItems
+  };
+}
+
+
+function mapDispatchToProps (dispatch) {
+  return {
+    actions: bindActionCreators(actions, dispatch)
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MegaNav);
