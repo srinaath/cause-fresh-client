@@ -2024,6 +2024,8 @@
   background: #235f99;
   margin: 0;
   padding: 0; }
+  .mega-nav a {
+    text-decoration: none; }
   .mega-nav .test-box {
     padding-left: 30px; }
     .mega-nav .test-box .donate {

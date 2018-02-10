@@ -54,9 +54,7 @@ class MegaNav extends Component {
       <header className="mega-nav">
         <div className="row">
           <div className="col-lg-4 test-box">
-            <h2>CAUSE
-              <span>fresh</span>
-            </h2>
+            <Link to={'/'}><h2>CAUSE<span>fresh</span></h2></Link>
           </div>
 
           <div className="col-lg-4 test-box" />

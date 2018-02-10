@@ -3,9 +3,11 @@ import React, { Component }   from 'react';
 import { connect }            from 'react-redux';
 import { bindActionCreators } from 'redux';
 
+// COMPONENTS 
+import LeftNav from '../../components/left-nav/left-nav';
+
 //REDUX
 import * as actions from '../../store/actions/course-actions';
-
 
 // STYLES
 import './home-container.css';
@@ -45,27 +47,7 @@ class HomeContainer extends Component {
     return (
       <div id="HomeContainer">
         <div className="row">
-          <div className="col-xs-3 menuWrapper">
-            <ul className="leftNav">
-              <li>
-                <i className="fa fa-spinner" />
-                <a className="menuLink">&nbsp; Latest Activity</a>
-              </li>
-              <li>
-                <i className="fa fa-globe" />
-                <a className="menuLink">&nbsp; Causes</a>
-              </li>
-              <li>
-                <i className="fa fa-dollar" />
-                <a className="menuLink">&nbsp; Donations</a>
-              </li>
-              <li>
-                <i className="fa fa-user-circle" />
-                <a className="menuLink">&nbsp; My Account</a>
-              </li>
-            </ul>
-          </div>
-
+          <LeftNav />
           <div className="col-xs-9 mainContentWrapper">
             <h1>
               <i className="fa fa-spinner" />&nbsp; Latest Activity
