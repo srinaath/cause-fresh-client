@@ -20,6 +20,7 @@
 import './mega-nav.css';
 
 // THIRD-PARTY
+import {Link, Route} from 'react-router-dom';
 import React, { Component }   from 'react';
 import { connect }            from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -61,7 +62,10 @@ class MegaNav extends Component {
           <div className="col-lg-4 test-box" />
 
           <div className="col-lg-4 test-box">
-            <p>{this.state.loginTxt}</p>
+            <p>
+              {this.state.loginTxt}&nbsp;&nbsp;
+              <Link to={'/donation'} className="donate">Donate</Link>
+            </p>
           </div>
         </div>
       </header>

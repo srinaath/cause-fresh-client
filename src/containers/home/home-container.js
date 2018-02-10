@@ -75,7 +75,7 @@ class HomeContainer extends Component {
             </h1>
             <ul>
             {this.state.transactions.map((item, index) =>
-              <li key={'transact-' + item.id}>
+              <li>
                 <span>
                   {item.causeDetailName}
                 </span>

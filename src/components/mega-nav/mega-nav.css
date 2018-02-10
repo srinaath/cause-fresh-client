@@ -2032,7 +2032,8 @@
       color: white;
       border: none;
       padding: 8px;
-      font-size: 16px; }
+      font-size: 14px;
+      text-decoration: none; }
       @media (max-width: 553px) {
         .mega-nav .test-box .donate {
           padding: 4px;

@@ -14,32 +14,9 @@ class DonationContainer extends Component {
 
   constructor(props) {
     super(props);
-
-    this.loadCourses = this.loadCourses.bind(this);
-    this.courseLoaded = false;
-
-    this.state = {
-      courses: []
-    };
   }
 
-  componentWillReceiveProps(nextProps) {
-    if(nextProps.coursesList !== this.props.coursesList) {
-      this.setState({
-        courses: [this.state.courses, ...nextProps.coursesList]
-      });
-    }
-  }
-
-  loadCourses() {
-    if(this.courseLoaded === false) {
-      this.courseLoaded = true;
-      this.props.actions.loadCourseItems();
-    }
-    else
-      this.props.actions.loadAddnCourseItems();
-  }
-
+  componentWillReceiveProps(nextProps) {}
 
   render() {
     return (
