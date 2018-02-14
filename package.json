@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.17.1",
     "classnames": "^2.2.5",
+    "dotenv": "^5.0.0",
     "esdoc": "^1.0.4",
     "esdoc-standard-plugin": "^1.0.0",
     "flexboxgrid-sass": "^8.0.5",
@@ -38,11 +39,16 @@
     "build-css": "node-sass-chokidar src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "start-js": "react-scripts start",
-    "start": "npm-run-all -p watch-css start-js",
+    "load-env-dev": "react-app-env --env-file=./env-config/.env.dev start",
+    "load-env-prod": "react-app-env --env-file=./env-config/.env.prod start",
+    "start": "npm-run-all -p watch-css load-env-dev start-js",
     "build-js": "react-scripts build",
-    "build": "npm-run-all prettify-js build-css build-js",
+    "build": "npm-run-all prettify-js build-css load-env-prod build-js",
     "test": "react-scripts test --env=jsdom",
     "test:debug": "react-scripts --inspect-brk test --runInBand --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "react-app-env": "^1.2.0"
   }
 }

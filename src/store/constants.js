@@ -1,0 +1,8 @@
+export default function Constants() {
+  return {
+    LOAD_COURSE_ITEMS : 'LOAD_COURSE_ITEMS',
+    LOAD_ADDN_COURSE_ITEMS : 'LOAD_ADDN_COURSE_ITEMS',
+    LOAD_CAUSES: 'LOAD_CAUSES',
+    MAKE_DONATION: 'MAKE_DONATION'
+  }
+}

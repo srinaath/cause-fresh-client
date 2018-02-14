@@ -42,14 +42,7 @@ class DonationContainer extends Component {
   }
 
   getDonationData() {
-    return fetch(`http://localhost:4000/api/getDonationScreenData`)
-    .then(response => response.json())
-    .then((resp) => {
-      return resp;
-    })
-    .catch((error) => {
-      return null;
-    });
+
   }
 
 

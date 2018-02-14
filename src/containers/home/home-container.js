@@ -3,7 +3,7 @@ import React, { Component }   from 'react';
 import { connect }            from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-// COMPONENTS 
+// COMPONENTS
 import LeftNav from '../../components/left-nav/left-nav';
 
 //REDUX
@@ -36,6 +36,7 @@ class HomeContainer extends Component {
 
   componentDidMount() {
     this.props.actions.loadCourseItems(1);
+    console.log('Enviornment variables', process.env);
   }
 
   loadTransactions() {
@@ -52,9 +53,8 @@ class HomeContainer extends Component {
             <h1><i className="fa fa-spinner" />&nbsp; Latest Activity</h1>
             <ul>
             {this.state.transactions.map((item, index) =>
-              <li>
+              <li key={'transaction-' + index}>
                 <span className="transactionDesc">
-                  {console.log(item)}
                   You donated <i className="bold">{item.transactionValue}</i> MC to <i className="bold">{item.causeOrg}</i> for <i className="bold">{item.causeName}</i> for <i className="bold">{item.causeDetailName}</i>.
                 </span>
               </li>)}
