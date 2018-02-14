@@ -17,7 +17,7 @@
           overflow: hidden;
           background: #fafafa;
           height: 16px;
-          
+
           select {
             width: 100%;
             border: none;
@@ -26,7 +26,7 @@
             background-image: none;
             -webkit-appearance: none;
             font-size: 1rem;
-            
+
 
             &:focus {
               outline: none;
@@ -44,8 +44,8 @@
           height: 60px;
           font-size: 1rem;
         }
-        
-        input[type=submit] {
+
+        #submit-btn {
           width: 100%;
           background-color: #4CAF50;
           color: white;
@@ -58,18 +58,18 @@
           font-family: 'Lato', sans-serif;
           text-transform: uppercase;
         }
-        
-        input[type=submit]:hover {
+
+        #submit-btn:hover {
           background-color: #45a049;
         }
-      
+
         div {
           border-radius: 5px;
           background-color: #f2f2f2;
           padding: 20px;
         }
       }
-  
+
       h1 {
         font-family: 'Lato', sans-serif;
         font-weight: 100;
@@ -77,21 +77,21 @@
         font-size: 1.8em;
         text-align: left;
         margin-left: 20px;
-  
+
         @media (max-width: 768px) {
           font-size: 1.4em;
           margin-left: 12px;
         }
       }
-  
+
       ul {
         padding-left: 0;
         margin-left: 20px;
-  
+
         @media (max-width: 768px) {
           margin-left: 12px;
         }
-  
+
         li {
           border: 1px solid #ccc;
           list-style: none;
@@ -99,16 +99,19 @@
           padding: 10px;
           text-align: left;
           width: 96%;
-  
+
           @media (max-width: 768px) {
             width: 88%;
           }
         }
       }
     }
-  
+
+    .donation-msg {
+      color: red;
+    }
+
     p {
       font-size: 60px;
     }
   }
-  

@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.17.1",
+    "classnames": "^2.2.5",
     "esdoc": "^1.0.4",
     "esdoc-standard-plugin": "^1.0.0",
     "flexboxgrid-sass": "^8.0.5",

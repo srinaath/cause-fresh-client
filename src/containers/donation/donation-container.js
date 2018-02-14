@@ -2,7 +2,7 @@
 import React, { Component }   from 'react';
 import { connect }            from 'react-redux';
 import { bindActionCreators } from 'redux';
-import axios from 'axios';
+import classNames from 'classnames';
 
 // COMPONENTS
 import LeftNav from '../../components/left-nav/left-nav';
@@ -20,9 +20,14 @@ class DonationContainer extends Component {
     this.getDonationData = this.getDonationData.bind(this);
     this.updateDonations = this.updateDonations.bind(this);
     this.onDonationChange = this.onDonationChange.bind(this);
+    this.donationMessages = {
+      success: 'Your donation has been succesful',
+      failure: 'There seems to have been an error donating money. Please try again later while we sort the glitch.'
+    };
     this.state = {
       donationsData: {},
-      donationAmt: ''
+      donationAmt: '',
+      donationStateMsg: ''
     };
   }
 
@@ -37,9 +42,10 @@ class DonationContainer extends Component {
   }
 
   getDonationData() {
-    return axios.get(`http://localhost:4000/api/getDonationScreenData`)
-    .then((response) => {
-      return response.data
+    return fetch(`http://localhost:4000/api/getDonationScreenData`)
+    .then(response => response.json())
+    .then((resp) => {
+      return resp;
     })
     .catch((error) => {
       return null;
@@ -48,11 +54,38 @@ class DonationContainer extends Component {
 
 
   updateDonations(evt) {
-    evt.stopPropogation();
-    const selectedOrg = document.getElementById("org").selectedIndex;
-    const selectedCause = document.getElementById("cause").selectedIndex;
-    const selectedSubCause = document.getElementById("subcause").selectedIndex;
+    evt.preventDefault();
+    const selectedOrg = document.getElementById("org").selectedIndex + 1;
+    const selectedCause = document.getElementById("cause").selectedIndex + 1;
+    const selectedSubCause = document.getElementById("subcause").selectedIndex + 1;
     const donationAmt = document.getElementById("donationTxt").value;
+
+    fetch (`http://localhost:4000/api/addDonationToSubCause`, {
+      body: JSON.stringify ({
+      subCauseId: selectedSubCause,
+      userId: 1,
+      causeId: selectedCause,
+      transactionAmt: donationAmt
+      }),
+      method: 'POST'
+    })
+    .then(response => response.json())
+    .then((response) => {
+      if(response) {
+        this.setState({
+          donationStateMsg: this.donationMessages.success
+        });
+      } else {
+        this.setState({
+          donationStateMsg: this.donationMessages.failure
+        });
+      }
+    })
+    .catch((error) => {
+      this.setState({
+        donationStateMsg: this.donationMessages.failure
+      });
+    });
   }
 
 
@@ -65,6 +98,12 @@ class DonationContainer extends Component {
   }
 
   render() {
+
+    var donationStateMessageCls = classNames({
+      'donation-msg': true,
+      'show-donation': this.state.donationStateMsg !== ''
+    });
+
     return (
       <div id="DonationContainer">
       <div className="row">
@@ -98,9 +137,12 @@ class DonationContainer extends Component {
               </select>
             </div>
             <br />
-            <input type="text" id ="donationTxt" placeholder="Donation Amount" onChange = {this.onDonationChange}/>
+            <input type="text" id ="donationTxt" placeholder="Donation Amount" onChange ={this.onDonationChange}/>
             <br />
-            <input type="submit" value="Donate" onClick={this.updateDonations} placeholder="Donate in MetaCoins"/>
+            <input id="submit-btn" onClick={this.updateDonations} placeholder="Donate in MetaCoins"/>
+            <span className = {donationStateMessageCls}>
+              {this.state.donationStateMsg}
+            </span>
           </form>
         </div>
       </div>
