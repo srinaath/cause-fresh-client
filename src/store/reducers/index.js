@@ -1,10 +1,13 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 
-import courseItems from  './course-reducer';
+import transactHistory from  './transact-history-reducer';
+import {makeADonation, loadCauses} from  './make-donation-reducer';
 
 const rootReducer = combineReducers({
-  courseItems,
+  transactHistory,
+  makeADonation,
+  loadCauses,
   routing: routerReducer
 });
 

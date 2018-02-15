@@ -3,11 +3,8 @@ import React, { Component }   from 'react';
 import { connect }            from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-// COMPONENTS 
+// COMPONENTS
 import LeftNav from '../../components/left-nav/left-nav';
-
-//REDUX
-import * as actions from '../../store/actions/course-actions';
 
 // STYLES
 import './donations-container.css';
@@ -18,7 +15,9 @@ class DonationsContainer extends Component {
     super(props);
   }
 
-  componentWillReceiveProps(nextProps) {}
+  componentWillReceiveProps(nextProps) {
+
+  }
 
   render() {
     return (
@@ -34,20 +33,4 @@ class DonationsContainer extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    coursesList: state.courseItems
-  };
-}
-
-
-function mapDispatchToProps (dispatch) {
-  return {
-    actions: bindActionCreators(actions, dispatch)
-  };
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(DonationsContainer);
+export default DonationsContainer;

@@ -3,11 +3,11 @@ import React, { Component }   from 'react';
 import { connect }            from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-// COMPONENTS 
+// COMPONENTS
 import LeftNav from '../../components/left-nav/left-nav';
 
 //REDUX
-import * as actions from '../../store/actions/course-actions';
+import * as actions from '../../store/actions/transact-history-action';
 
 // STYLES
 import './home-container.css';
@@ -35,11 +35,11 @@ class HomeContainer extends Component {
   }
 
   componentDidMount() {
-    this.props.actions.loadCourseItems(1);
+    this.props.actions.loadTransactionsForUser(1);
   }
 
   loadTransactions() {
-    this.props.actions.loadCourseItems(1);
+    this.props.actions.loadTransactionsForUser(1);
   }
 
 
@@ -52,9 +52,8 @@ class HomeContainer extends Component {
             <h1><i className="fa fa-spinner" />&nbsp; Latest Activity</h1>
             <ul>
             {this.state.transactions.map((item, index) =>
-              <li>
+              <li key={'transaction-' + index}>
                 <span className="transactionDesc">
-                  {console.log(item)}
                   You donated <i className="bold">{item.transactionValue}</i> MC to <i className="bold">{item.causeOrg}</i> for <i className="bold">{item.causeName}</i> for <i className="bold">{item.causeDetailName}</i>.
                 </span>
               </li>)}
@@ -68,7 +67,7 @@ class HomeContainer extends Component {
 
 function mapStateToProps(state) {
   return {
-    transactionData: state.courseItems
+    transactionData: state.transactHistory
   };
 }
 

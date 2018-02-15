@@ -23,10 +23,7 @@ import './mega-nav.css';
 import {Link, Route} from 'react-router-dom';
 import React, { Component }   from 'react';
 import { connect }            from 'react-redux';
-import { bindActionCreators } from 'redux';
 
-//REDUX
-import * as actions from '../../store/actions/course-actions';
 
 class MegaNav extends Component {
   constructor() {
@@ -77,14 +74,6 @@ function mapStateToProps(state) {
   };
 }
 
-
-function mapDispatchToProps (dispatch) {
-  return {
-    actions: bindActionCreators(actions, dispatch)
-  };
-}
-
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps
 )(MegaNav);
