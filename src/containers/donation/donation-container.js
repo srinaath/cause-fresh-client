@@ -38,7 +38,9 @@ class DonationContainer extends Component {
     }
 
     if(nextProps.donationStatus !== this.props.donationStatus) {
-      console.log('Donation status', nextProps.donationStatus);
+      this.setState({
+        donationStateMsg: this.donationMessages.success
+      });
     }
   }
 
