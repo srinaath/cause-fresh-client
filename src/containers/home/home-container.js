@@ -7,7 +7,7 @@ import { bindActionCreators } from 'redux';
 import LeftNav from '../../components/left-nav/left-nav';
 
 //REDUX
-import * as actions from '../../store/actions/course-actions';
+import * as actions from '../../store/actions/transact-history-action';
 
 // STYLES
 import './home-container.css';
@@ -16,6 +16,8 @@ class HomeContainer extends Component {
 
   constructor(props) {
     super(props);
+    const googleClientId = process.env.REACT_APP_BASE_URL;
+    console.log('ENVIORNMENT', process.env);
 
     this.loadTransactions = this.loadTransactions.bind(this);
 
@@ -35,12 +37,11 @@ class HomeContainer extends Component {
   }
 
   componentDidMount() {
-    this.props.actions.loadCourseItems(1);
-    console.log('Enviornment variables', process.env);
+    this.props.actions.loadTransactionsForUser(1);
   }
 
   loadTransactions() {
-    this.props.actions.loadCourseItems(1);
+    this.props.actions.loadTransactionsForUser(1);
   }
 
 
@@ -68,7 +69,7 @@ class HomeContainer extends Component {
 
 function mapStateToProps(state) {
   return {
-    transactionData: state.courseItems
+    transactionData: state.transactHistory
   };
 }
 

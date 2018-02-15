@@ -20,13 +20,8 @@
 import './left-nav.css';
 
 // THIRD-PARTY
-import {Link, Route} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import React, { Component }   from 'react';
-import { connect }            from 'react-redux';
-import { bindActionCreators } from 'redux';
-
-//REDUX
-import * as actions from '../../store/actions/course-actions';
 
 class LeftNav extends Component {
   constructor() {
@@ -42,25 +37,25 @@ class LeftNav extends Component {
         <ul className="leftNav">
           <li>
             <Link to={'/'} className="menuLink">
-              <i className="fa fa-spinner" />&nbsp; 
+              <i className="fa fa-spinner" />&nbsp;
               <span className="linkText">Latest Activity</span>
             </Link>
           </li>
           <li>
             <Link to={'/causes'} className="menuLink">
-              <i className="fa fa-globe" />&nbsp; 
+              <i className="fa fa-globe" />&nbsp;
               <span className="linkText">Causes</span>
             </Link>
           </li>
           <li>
             <Link to={'/donations'} className="menuLink">
-              <i className="fa fa-dollar" />&nbsp; 
+              <i className="fa fa-dollar" />&nbsp;
               <span className="linkText">Donations</span>
             </Link>
           </li>
           <li>
             <Link to={'/account'} className="menuLink">
-              <i className="fa fa-user-circle" />&nbsp; 
+              <i className="fa fa-user-circle" />&nbsp;
               <span className="linkText">My Account</span>
             </Link>
           </li>
@@ -70,20 +65,4 @@ class LeftNav extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    transactionData: state.courseItems
-  };
-}
-
-
-function mapDispatchToProps (dispatch) {
-  return {
-    actions: bindActionCreators(actions, dispatch)
-  };
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(LeftNav);
+export default LeftNav;

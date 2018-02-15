@@ -8,7 +8,7 @@ import classNames from 'classnames';
 import LeftNav from '../../components/left-nav/left-nav';
 
 //REDUX
-import * as actions from '../../store/actions/course-actions';
+import * as actions from '../../store/actions/make-donation-action';
 
 // STYLES
 import './donation-container.css';
@@ -146,7 +146,8 @@ class DonationContainer extends Component {
 
 function mapStateToProps(state) {
   return {
-    coursesList: state.courseItems
+    causesObj: state.loadCauses,
+    donationStatus: state.makeADonation
   };
 }
 

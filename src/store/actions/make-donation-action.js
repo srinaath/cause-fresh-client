@@ -1,13 +1,13 @@
 import constants from '../constants';
 
-export function loadCauses(userId) {
+export function loadCauses(params) {
   return function (dispatch) {
     fetch (`http://localhost:4000/api/addDonationToSubCause`, {
       body: JSON.stringify ({
-      subCauseId: selectedSubCause,
-      userId: 1,
-      causeId: selectedCause,
-      transactionAmt: donationAmt
+      subCauseId: params.selectedSubCause,
+      userId: params.userId,
+      causeId: params.selectedCause,
+      transactionAmt: params.donationAmt
       }),
       method: 'POST'
     })
@@ -31,7 +31,7 @@ export function makeADonation(params) {
       dispatch(
         {
           type: constants.MAKE_DONATION,
-          addedTransaction
+          addedTransaction: resp
         })
     })
     .catch((error) => {

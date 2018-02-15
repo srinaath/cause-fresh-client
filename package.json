@@ -41,7 +41,7 @@
     "start-js": "react-scripts start",
     "load-env-dev": "react-app-env --env-file=./env-config/.env.dev start",
     "load-env-prod": "react-app-env --env-file=./env-config/.env.prod start",
-    "start": "npm-run-all -p watch-css load-env-dev start-js",
+    "start": "npm-run-all -p watch-css start-js",
     "build-js": "react-scripts build",
     "build": "npm-run-all prettify-js build-css load-env-prod build-js",
     "test": "react-scripts test --env=jsdom",
