@@ -17,7 +17,6 @@ class DonationContainer extends Component {
 
   constructor(props) {
     super(props);
-    this.getDonationData = this.getDonationData.bind(this);
     this.updateDonations = this.updateDonations.bind(this);
     this.onDonationChange = this.onDonationChange.bind(this);
     this.donationMessages = {
@@ -32,17 +31,21 @@ class DonationContainer extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    if(nextProps.causesObj !== this.props.causesObj) {
+      this.setState({
+        donationsData : nextProps.causesObj
+      });
+    }
 
+    if(nextProps.donationStatus !== this.props.donationStatus) {
+      console.log('Donation status', nextProps.donationStatus);
+    }
   }
 
   onDonationChange(evt) {
     this.setState({
       donationAmt: Number(evt.target.value)
     });
-  }
-
-  getDonationData() {
-
   }
 
 
@@ -52,42 +55,18 @@ class DonationContainer extends Component {
     const selectedCause = document.getElementById("cause").selectedIndex + 1;
     const selectedSubCause = document.getElementById("subcause").selectedIndex + 1;
     const donationAmt = document.getElementById("donationTxt").value;
-
-    fetch (`http://localhost:4000/api/addDonationToSubCause`, {
-      body: JSON.stringify ({
-      subCauseId: selectedSubCause,
-      userId: 1,
-      causeId: selectedCause,
-      transactionAmt: donationAmt
-      }),
-      method: 'POST'
-    })
-    .then(response => response.json())
-    .then((response) => {
-      if(response) {
-        this.setState({
-          donationStateMsg: this.donationMessages.success
-        });
-      } else {
-        this.setState({
-          donationStateMsg: this.donationMessages.failure
-        });
-      }
-    })
-    .catch((error) => {
-      this.setState({
-        donationStateMsg: this.donationMessages.failure
-      });
+    const userId = 1;
+    this.props.actions.makeADonation({
+      userId,
+      selectedCause,
+      selectedSubCause,
+      donationAmt
     });
   }
 
 
   componentDidMount() {
-    this.getDonationData().then((data) => {
-      this.setState({
-        donationsData : data
-      });
-    });
+    this.props.actions.loadCauses();
   }
 
   render() {
@@ -132,7 +111,9 @@ class DonationContainer extends Component {
             <br />
             <input type="text" id ="donationTxt" placeholder="Donation Amount" onChange ={this.onDonationChange}/>
             <br />
-            <input id="submit-btn" onClick={this.updateDonations} placeholder="Donate in MetaCoins"/>
+            <button id="submit-btn" onClick={this.updateDonations}>
+              Donate in CFCoins
+            </button>
             <span className = {donationStateMessageCls}>
               {this.state.donationStateMsg}
             </span>

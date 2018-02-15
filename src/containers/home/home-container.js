@@ -16,8 +16,6 @@ class HomeContainer extends Component {
 
   constructor(props) {
     super(props);
-    const googleClientId = process.env.REACT_APP_BASE_URL;
-    console.log('ENVIORNMENT', process.env);
 
     this.loadTransactions = this.loadTransactions.bind(this);
 

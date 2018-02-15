@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import dotenv from 'dotenv';
 import Routes from './routes';
 import MegaNav from './components/mega-nav/mega-nav';
 import './App.css';
-process.env.NODE_ENV === 'production' ? dotenv.config({ path: './env-config/.env.prod' }) : dotenv.config({ path: './env-config/.env.dev' });
-
 
 
 class App extends Component {

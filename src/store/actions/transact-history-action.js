@@ -4,20 +4,21 @@ import constants from '../constants';
 
 export function loadTransactionsForUser(userId) {
   return function (dispatch) {
-    const url = `${process.env.BASE_URL}/getTransactionDetails?userId=${userId}`;
+    const url = `${process.env.REACT_APP_BASE_URL}/getTransactionDetails?userId=${userId}`;
     console.log(url);
     return axios.get(url)
     .then((response) => {
       const respData = response.data;
+      dispatch({
+        type: constants.LOAD_TRANSACTIONS,
+        responseData: respData
+      })
+    },
+    (error) => {
       dispatch(
         {
-          type: constants.LOAD_TRANSACTIONS,
-          responseData: respData
+          type: constants.ERROR_LOAD_TRANSACTIONS,
+          errorMessage: error
         })
-
-    })
-    .catch((error) => {
-      return null;
-    });
-  };
+    })};
 }
