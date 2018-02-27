@@ -1,6 +1,6 @@
 // THIRD-PARTY
-import React, { Component }   from 'react';
-import { connect }            from 'react-redux';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 // COMPONENTS
@@ -13,7 +13,6 @@ import * as actions from '../../store/actions/transact-history-action';
 import './home-container.css';
 
 class HomeContainer extends Component {
-
   constructor(props) {
     super(props);
 
@@ -26,7 +25,7 @@ class HomeContainer extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if(this.props.transactionData !== nextProps.transactionData) {
+    if (this.props.transactionData !== nextProps.transactionData) {
       this.setState({
         transactions: nextProps.transactionData.transactHistory,
         userData: nextProps.transactionData.userDetails
@@ -35,13 +34,12 @@ class HomeContainer extends Component {
   }
 
   componentDidMount() {
-    this.props.actions.loadTransactionsForUser(1);
+    this.loadTransactions();
   }
 
   loadTransactions() {
     this.props.actions.loadTransactionsForUser(1);
   }
-
 
   render() {
     return (
@@ -49,14 +47,20 @@ class HomeContainer extends Component {
         <div className="row">
           <LeftNav />
           <div className="col-xs-9 mainContentWrapper">
-            <h1><i className="fa fa-spinner" />&nbsp; Latest Activity</h1>
+            <h1>
+              <i className="fa fa-spinner" />&nbsp; Latest Activity
+            </h1>
             <ul>
-            {this.state.transactions.map((item, index) =>
-              <li key={'transaction-' + index}>
-                <span className="transactionDesc">
-                  You donated <i className="bold">{item.transactionValue}</i> MC to <i className="bold">{item.causeOrg}</i> for <i className="bold">{item.causeName}</i> for <i className="bold">{item.causeDetailName}</i>.
-                </span>
-              </li>)}
+              {this.state.transactions.map((item, index) => (
+                <li key={'transaction-' + index}>
+                  <span className="transactionDesc">
+                    You donated <i className="bold">{item.transactionValue}</i>{' '}
+                    MC to <i className="bold">{item.causeOrg}</i> for{' '}
+                    <i className="bold">{item.causeName}</i> for{' '}
+                    <i className="bold">{item.causeDetailName}</i>.
+                  </span>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -71,15 +75,10 @@ function mapStateToProps(state) {
   };
 }
 
-
-function mapDispatchToProps (dispatch) {
+function mapDispatchToProps(dispatch) {
   return {
     actions: bindActionCreators(actions, dispatch)
   };
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(HomeContainer);
-
+export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer);

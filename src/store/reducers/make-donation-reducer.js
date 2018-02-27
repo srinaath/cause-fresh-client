@@ -1,6 +1,6 @@
 import constants from '../constants';
 
-export function loadCauses(state = {} , action) {
+export function loadCauses(state = {}, action) {
   switch (action.type) {
     case constants.LOAD_CAUSES:
       return action.causes;
@@ -11,7 +11,7 @@ export function loadCauses(state = {} , action) {
   }
 }
 
-export function makeADonation(state = {} , action) {
+export function makeADonation(state = {}, action) {
   switch (action.type) {
     case constants.MAKE_DONATION:
       return action.addedTransaction;
@@ -21,6 +21,3 @@ export function makeADonation(state = {} , action) {
       return state;
   }
 }
-
-
-
