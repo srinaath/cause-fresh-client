@@ -1,6 +1,6 @@
 import constants from '../constants';
 
-export default function loadTransactions(state = {} , action) {
+export default function loadTransactions(state = {}, action) {
   switch (action.type) {
     case constants.LOAD_TRANSACTIONS:
       return action.responseData;
@@ -12,6 +12,3 @@ export default function loadTransactions(state = {} , action) {
       return state;
   }
 }
-
-
-

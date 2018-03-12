@@ -20,16 +20,15 @@
 import './left-nav.css';
 
 // THIRD-PARTY
-import {Link} from 'react-router-dom';
-import React, { Component }   from 'react';
+import { Link } from 'react-router-dom';
+import React, { Component } from 'react';
 
 class LeftNav extends Component {
   constructor() {
     super();
   }
 
-  componentWillReceiveProps(nextProps) {
-  }
+  componentWillReceiveProps(nextProps) {}
 
   render() {
     return (

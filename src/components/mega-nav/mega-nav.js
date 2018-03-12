@@ -20,10 +20,9 @@
 import './mega-nav.css';
 
 // THIRD-PARTY
-import {Link, Route} from 'react-router-dom';
-import React, { Component }   from 'react';
-import { connect }            from 'react-redux';
-
+import { Link, Route } from 'react-router-dom';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class MegaNav extends Component {
   constructor() {
@@ -35,11 +34,13 @@ class MegaNav extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if(this.props.transactionData !== nextProps.transactionData) {
+    if (this.props.transactionData !== nextProps.transactionData) {
       this.setState({
         userData: nextProps.transactionData.userDetails
       });
-      let logText = `Hello ${nextProps.transactionData.userDetails.userName} | Balance: ${nextProps.transactionData.userDetails.balance} MC`;
+      let logText = `Hello ${
+        nextProps.transactionData.userDetails.userName
+      } | Balance: ${nextProps.transactionData.userDetails.balance} MC`;
       this.setState({
         loginTxt: logText
       });
@@ -51,7 +52,11 @@ class MegaNav extends Component {
       <header className="mega-nav">
         <div className="row">
           <div className="col-lg-4 test-box">
-            <Link to={'/'}><h2>CAUSE<span>fresh</span></h2></Link>
+            <Link to={'/'}>
+              <h2>
+                CAUSE<span>fresh</span>
+              </h2>
+            </Link>
           </div>
 
           <div className="col-lg-4 test-box" />
@@ -59,7 +64,9 @@ class MegaNav extends Component {
           <div className="col-lg-4 test-box">
             <p>
               {this.state.loginTxt}&nbsp;&nbsp;
-              <Link to={'/donation'} className="donate">Donate</Link>
+              <Link to={'/donation'} className="donate">
+                Donate
+              </Link>
             </p>
           </div>
         </div>
@@ -74,6 +81,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(
-  mapStateToProps
-)(MegaNav);
+export default connect(mapStateToProps)(MegaNav);

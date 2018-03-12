@@ -4,11 +4,8 @@ import Routes from './routes';
 import MegaNav from './components/mega-nav/mega-nav';
 import './App.css';
 
-
 class App extends Component {
-  componentDidMount() {
-
-  }
+  componentDidMount() {}
 
   render() {
     return (
