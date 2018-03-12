@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "assert": "^1.4.1",
     "axios": "^0.17.1",
     "classnames": "^2.2.5",
+    "cross-env": "^5.1.4",
     "dotenv": "^5.0.0",
     "esdoc": "^1.0.4",
     "esdoc-standard-plugin": "^1.0.0",
@@ -47,7 +49,7 @@
     "delete-public-folder": "rimraf ../server/public",
     "copy-public": "cp -R ./build/ ../server/public",
     "build": "npm-run-all prettify-js build-css build-js delete-public-folder copy-public",
-    "test": "react-scripts test --env=jsdom",
+    "test": "cross-env CI=true react-scripts test --env=jsdom",
     "test:debug": "react-scripts --inspect-brk test --runInBand --env=jsdom",
     "eject": "react-scripts eject"
   },
