@@ -1,4 +1,4 @@
-Build Status: http://184.73.137.70:8080/job/cause-fresh-client/job/develop/badge/icon
+[![Build Status](http://184.73.137.70:8080/job/cause-fresh-client/job/develop/badge/icon)](http://184.73.137.70:8080/job/cause-fresh-client/job/develop/)
 
 
 This project was bootstrapped with [Create React App]
