@@ -5,9 +5,6 @@ pipeline {
             args '-p 3000:3000'
         }
     }
-    environment {
-        CI = 'true'
-    }
     stages {
         stage('Build') {
             steps {
@@ -16,7 +13,7 @@ pipeline {
         }
         stage('Build FE Code') {
             steps {
-                sh 'yarn build'
+                sh 'CI=false yarn build'
             }
         }
         stage('Test') {
