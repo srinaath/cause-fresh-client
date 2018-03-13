@@ -6,5 +6,5 @@ import { Provider } from 'react-redux';
 import assert from 'assert';
 
 it('renders without crashing', () => {
-  assert.equal([1,2,3].indexOf(4), -1);
+  assert.equal([1, 2, 3].indexOf(4), -1);
 });
