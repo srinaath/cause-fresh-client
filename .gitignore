@@ -2,7 +2,6 @@
 
 # dependencies
 /node_modules
-/package-lock.json
 
 # testing
 /coverage
@@ -26,4 +25,3 @@ yarn-error.log*
 /.vscode/settings.json
 /app-env
 
-/yarn.lock
