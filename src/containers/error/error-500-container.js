@@ -1,6 +1,9 @@
 // THIRD-PARTY
 import React, { Component } from 'react';
 
+// STYLES
+import './error-container.css';
+
 class Error500Container extends Component {
   render() {
     return (

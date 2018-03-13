@@ -14,6 +14,11 @@ pipeline {
                 sh 'yarn install'
             }
         }
+        stage('Build FE Code') {
+            steps {
+                sh 'yarn build'
+            }
+        }
         stage('Test') {
             steps {
                 sh 'npm test'

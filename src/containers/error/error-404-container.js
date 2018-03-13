@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 
 // STYLES
-
+import './error-container.scss';
 
 class Error404Container extends Component {
   render() {
