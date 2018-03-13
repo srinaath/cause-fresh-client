@@ -1,5 +1,6 @@
-Build Status: http://184.73.137.70:8080/buildStatus/icon?job=cause-fresh-client/develop
-
+{::nomarkdown}
+<h3>Image <img src="http://184.73.137.70:8080/job/cause-fresh-client/job/develop/badge/icon?style=plastic"></h3>
+{:/}
 
 This project was bootstrapped with [Create React App]
 (https://github.com/facebookincubator/create-react-app).
