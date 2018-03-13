@@ -1,4 +1,4 @@
-[![Build Status](http://184.73.137.70:8080/job/cause-fresh-client/job/develop/badge/icon)](http://184.73.137.70:8080/job/cause-fresh-client/job/develop/)
+Build Status: http://184.73.137.70:8080/buildStatus/icon?job=cause-fresh-client/develop
 
 
 This project was bootstrapped with [Create React App]
