@@ -48,7 +48,7 @@
     "build-js": "react-scripts build",
     "delete-public-folder": "rimraf ../server/public",
     "copy-public": "cp -R ./build/ ../server/public",
-    "build": "npm-run-all prettify-js build-css build-js delete-public-folder copy-public",
+    "build": "npm-run-all prettify-js build-css build-js",
     "test": "cross-env CI=true react-scripts test --env=jsdom",
     "test:debug": "react-scripts --inspect-brk test --runInBand --env=jsdom",
     "eject": "react-scripts eject"
