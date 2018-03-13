@@ -1,4 +1,4 @@
-Build status: http://184.73.137.70:8080/buildStatus/icon?job=cause-fresh-client/develop
+
 This project was bootstrapped with [Create React App]
 (https://github.com/facebookincubator/create-react-app).
 
