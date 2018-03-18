@@ -1,17 +1,17 @@
 pipeline {
     agent {
         docker {
-            image 'node:latest'
+            image 'node:9.8'
             args '-p 3000:3000'
         }
     }
     stages {
-        stage('Build') {
+        stage('Install Dependancies') {
             steps {
                 sh 'yarn install'
             }
         }
-        stage('Build Server Code') {
+        stage('Build Client Code') {
             steps {
                 sh 'CI=false yarn build'
             }
@@ -19,6 +19,11 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'CI=true npm test'
+            }
+        }
+         stage('Deploy to AWS') {
+            steps {
+                sh './jenkins/scripts/test.sh'
             }
         }
     }
