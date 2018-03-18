@@ -21,10 +21,10 @@ pipeline {
                 sh 'CI=true npm test'
             }
         }
-         stage('Deploy to AWS') {
-            steps {
-                sh './jenkins/scripts/test.sh'
-            }
+    }
+    post {
+        steps {
+            sh '/home/sites/cause-fresh-client/test.sh'
         }
     }
 }
