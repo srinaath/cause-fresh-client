@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
             image 'node:9.8'
-            args '-u root:root -p 3000:3000'
+            args '-p 3000:3000'
         }
     }
     stages {
@@ -22,10 +22,9 @@ pipeline {
             }
         }
          stage('Deploy to AWS') {
-             withDockerContainer(args: "-u root", image: "${JOB_NAME}") {
-                sh "npm install"
+            steps {
+                sh './jenkins/scripts/test.sh'
             }
         }
-
     }
 }
