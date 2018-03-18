@@ -1,14 +1,14 @@
 pipeline {
     agent {
         docker {
-            image 'node:6-alpine'
+            image 'node:latest'
             args '-p 3000:3000'
         }
     }
     stages {
-        stage("Install dependencies") {
+        stage('Build') {
             steps {
-                sh "npm install"
+                sh 'yarn install'
             }
         }
         stage('Build Server Code') {
@@ -21,8 +21,5 @@ pipeline {
                 sh 'CI=true npm test'
             }
         }
-    }
-    environment {
-        npm_config_cache = 'npm-cache'
     }
 }
