@@ -23,8 +23,10 @@ pipeline {
         }
     }
     post {
-        steps {
-            sh '/home/sites/cause-fresh-client/test.sh'
+        always {
+            steps {
+                sh '/home/sites/cause-fresh-client/test.sh'
+            }
         }
     }
 }
