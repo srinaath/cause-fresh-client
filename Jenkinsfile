@@ -21,13 +21,15 @@ pipeline {
                 sh 'CI=true npm test'
             }
         }
+         stage('Deploy to AWS') {
+            steps {
+                sh './jenkins/scripts/test.sh'
+            }
+        }
     }
     post {
         always {
             echo 'I will always say Hello again!'
-        }
-        steps {
-            sh '/home/sites/cause-fresh-client/test.sh'
         }
     }
 }
