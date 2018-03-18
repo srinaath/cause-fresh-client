@@ -34,25 +34,19 @@ node('node') {
 
        stage('Test'){
 
+         env.NODE_ENV = "test"
+
+         print "Environment will be : ${env.NODE_ENV}"
 
          sh 'node -v'
-         sh 'npm prune'
          sh 'yarn install'
-         sh 'yarn build'
+         sh 'yarn test'
 
        }
-
-       stage('Deploy'){
-
-         echo 'Push to Repo'
-         sh './jenkins/scripts/test.sh'
-
-       }
-
+    }
     catch (err) {
 
         currentBuild.result = "FAILURE"
-
         throw err
     }
 
