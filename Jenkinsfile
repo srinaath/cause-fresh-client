@@ -1,8 +1,7 @@
 pipeline {
     agent {
-        docker {
-            image 'node:9.8'
-            args '-u root:root -p 3000:3000'
+        dockerfile {
+            filename 'Dockerfile'
         }
     }
     stages {
@@ -21,7 +20,12 @@ pipeline {
                 sh 'CI=true npm test'
             }
         }
-         stage('Deploy to AWS') {
+        stage('Deploy to AWS') {
+            steps {
+                sh './jenkins/scripts/test.sh'
+            }
+        }
+        stage('Posting build') {
             steps {
                 sh './jenkins/scripts/test.sh'
             }
