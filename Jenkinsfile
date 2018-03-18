@@ -24,11 +24,10 @@ pipeline {
     }
     post {
         always {
-            stage('Run it') {
-                steps {
-                    sh '/home/sites/cause-fresh-client/test.sh'
-                }
-            }
+            echo 'I will always say Hello again!'
+        }
+        steps {
+            sh '/home/sites/cause-fresh-client/test.sh'
         }
     }
 }
