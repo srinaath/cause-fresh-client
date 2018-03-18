@@ -24,8 +24,10 @@ pipeline {
     }
     post {
         always {
-            steps {
-                sh '/home/sites/cause-fresh-client/test.sh'
+            stage('Run it') {
+                steps {
+                    sh '/home/sites/cause-fresh-client/test.sh'
+                }
             }
         }
     }
