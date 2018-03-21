@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Deploy to AWS') {
             steps {
-                sh './jenkins/scripts/test.sh'
+                sh 'sh ./jenkins/scripts/test.sh'
             }
         }
     }

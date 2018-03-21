@@ -1,2 +1,2 @@
 #!/usr/bin/env sh
-echo "run it
+echo "run it"
