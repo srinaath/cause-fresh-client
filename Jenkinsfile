@@ -5,6 +5,17 @@ pipeline {
         }
     }
     stages {
+        stage('Build') {
+            steps {
+                sh 'yarn install'
+                sh 'yarn build'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'yarn test'
+            }
+        }
         stage('Deploy to AWS') {
             steps {
                 sh 'sh ./jenkins/scripts/test.sh'
@@ -12,8 +23,11 @@ pipeline {
         }
     }
     post {
-        always {
-            echo 'I will always say Hello again!'
+        success {
+            echo 'The client build was completed succesfully'
+        }
+        failure {
+            echo 'An error occured in the client build'
         }
     }
 }
